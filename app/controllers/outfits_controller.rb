@@ -1,6 +1,9 @@
 class OutfitsController < ApplicationController
+    authorize @outfit
+
     def index
-        @outfits = Outfit.all
+        # @outfits = Outfit.all
+        @outfits = policy_scope(Outfit).order(created_at: :desc)
     end
 
     def show
@@ -11,7 +14,7 @@ class OutfitsController < ApplicationController
         @outfits = Outfit.new
     end
 
-    def create 
+    def create
         @outifs = Outfit.new(outfit_params)
         if @outfit.save
             redirect_to outfit_path(@outfit)
