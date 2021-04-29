@@ -5,6 +5,9 @@
         <h1><%= @outfit.category %></h1>
         <p><%= @outfit.name %></p>
       </div>
+      <div>
+      <%= image_tag @outfit.image, alt: "Outfit", width: 200 %>
+      </div>
       <div class="flat-show-card">
         <h3>A bit more about this outfit...</h3>
         <p>The daily price to rent this outfit is:</p>
