@@ -5,15 +5,15 @@ class OutfitsController < ApplicationController
     end
 
     def show
-        @outfits = Outfit.find(params[:id])
+        @outfit = Outfit.find(params[:id])
     end
 
     def new
-        @outfits = Outfit.new
+        @outfit = Outfit.new
     end
 
     def create
-        @outifs = Outfit.new(outfit_params)
+        @outfit = Outfit.new(outfit_params)
         if @outfit.save
             redirect_to outfit_path(@outfit)
         else
@@ -26,7 +26,7 @@ class OutfitsController < ApplicationController
     end
 
     def update
-        @outfits = Outfit.find(params[:id])
+        @outfit = Outfit.find(params[:id])
         @outfit.update(outfit_params)
         redirect_to outfit_path(@outfit)
     end
