@@ -44,3 +44,4 @@ private
     def outfit_params
         params.require(:outfits).permit(:name, :description, :price, :image, :category, :user_id)
     end
+end
