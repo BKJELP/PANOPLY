@@ -1,4 +1,7 @@
+<%= render 'shared/navbar' %>
+
 <div class="container mt-3">
+  
   <div class="row">
     <div class="col-12">
       <h1>All our Outfits</h1>
@@ -19,12 +22,12 @@
     <% @outfits.each do |outfit| %>
       <div class="col-4">
         <div class="outfit-card">
-          <div class="outfit-card-image" style="background-image: url('<%= @outfit.image %>')"></div>
+          <div class="outfit-card-image" style="background-image: url('<%= outfit.image %>')"></div>
           <div class="outfit-card-content">
             <div class="outfit-card-title">
-              <h4><%= @outfit.name %></h4>
+              <h4><%= outfit.name %></h4>
             </div>
-            <p><%= @outfit.category %></p>
+            <p><%= outfit.category %></p>
             <div class="flex">
               <div class="flex ml-3">
                 <i class="material-icons mr-2">euro_symbol</i> <%= @outfit.price %>
@@ -38,4 +41,5 @@
       </div>
     <% end %>
   </div>
+  
 </div>
