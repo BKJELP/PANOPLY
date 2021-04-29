@@ -1,5 +1,4 @@
 class OutfitsController < ApplicationController
-    authorize @outfit
 
     def index
         # @outfits = Outfit.all
