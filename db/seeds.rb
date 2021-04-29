@@ -16,3 +16,13 @@ william.save!
 brice.save!
 adrien.save!
 puts 'Finished!'
+
+puts 'Creating outfits...'
+tech_interview = Outfit.new(name:"Let's shine as a baby unicorn", description:"You cannot join a unicorn without looking like a unicorn. As simple as that. 100 percent success rate", price:"35", catagory:"startup")
+ma_interview = Outfit.new(name:"Become a Wolf of Wall Street", description:"Was Leonardo DiCaprio a professional banker? No but at least he wore the uniform. There is no other factor of success", price:"10000",category:"corporate")
+teacher_interview = Outfit.new(name:"How to be a magic teacher at Poudlard", description:"Albus Dumbledore has only a uniform and no talent. Be like Albus, become a wizard master.", price: "56", category:"public")
+tech_interview.save!
+ma_interview.save!
+teacher_interview.save!
+puts 'Finished!'
+
