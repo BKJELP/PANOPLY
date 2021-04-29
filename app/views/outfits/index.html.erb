@@ -30,12 +30,12 @@
             <p><%= outfit.category %></p>
             <div class="flex">
               <div class="flex ml-3">
-                <i class="material-icons mr-2">euro_symbol</i> <%= @outfit.price %>
+                <i class="material-icons mr-2">€</i> <%= outfit.price %>
               </div>
             </div>
           </div>
           <div class="outfit-card-actions">
-            <%= link_to 'More info', outfit_path(@outfit) %>
+            <%= link_to 'More info', outfit_path(outfit) %>
           </div>
         </div>
       </div>
