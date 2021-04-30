@@ -21,7 +21,7 @@ adrien.save!
 puts 'Finished!'
 
 puts 'Creating outfits...'
-tech_interview = Outfit.new(name:"Let's shine as a baby unicorn", description:"You cannot join a unicorn without looking like a unicorn. As simple as that. 100 percent success rate", price:"35", category:"startup", image: "https://res.cloudinary.com/willzor/image/upload/v1619721468/Unic_i1k2aq.jpg")
+tech_interview = Outfit.new(name:"Let's shine as a baby unicorn", description:"You cannot join a unicorn without looking like a unicorn. As simple as that. 100 percent success rate", price:"35", category:"startup", image:"https://res.cloudinary.com/willzor/image/upload/v1619721468/Unic_i1k2aq.jpg")
 tech_interview.user = guillaume
 ma_interview = Outfit.new(name:"Become a Wolf of Wall Street", description:"Was Leonardo DiCaprio a professional banker? No but at least he wore the uniform. There is no other factor of success", price:"10000",category:"corporate", image:"https://res.cloudinary.com/willzor/image/upload/v1619721554/banker_nsxcu2.jpg")
 ma_interview.user = brice
