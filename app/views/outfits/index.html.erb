@@ -1,0 +1,48 @@
+<%= render 'shared/navbar' %>
+
+<div class="container mt-3">
+  
+  <div class="row">
+    <div class="col-12">
+      <h1>All our Outfits</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <% if @query %>
+        <p>You searched for <strong><%= @query %></strong>. We found <%= @outfits.count %> outfits out of our <%= Outfit.count %> on our website.</p>
+      <% else %>
+        <p>All our <%= Outfit.count %> outfits.</p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @outfits.each do |outfit| %>
+      <div class="col-4">
+        <div class="outfit-card">
+          <div class="outfit-card-image" style="background-image: url('<%= outfit.image %>')"></div>
+          <div class="outfit-card-content">
+            <div class="outfit-card-title">
+              <h4><%= outfit.name %></h4>
+            </div>
+            <p><%= outfit.category %></p>
+            <div class="flex">
+              <div class="flex ml-3">
+                <i class="material-icons mr-2">€</i> <%= outfit.price %>
+              </div>
+            </div>
+          </div>
+          <div class="outfit-card-actions">
+            <%= link_to 'More info', outfit_path(outfit) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <% if policy(Outfit).create? %>
+  <%= link_to "Rent your outfit!", new_outfit_path %>
+<% end %>
+  
+</div>
