@@ -12,6 +12,11 @@
         <p>This outfit would work nicely if:</p>
         <p><%= @outfit.description %></p>
       </div>
-    </div>     
+    </div>
   </div>
+<% if @outfit.id == @reservations.outfit_id %>
+  <p>Reservation excists</p>
+<%else%>
+  <p>You can book</p>
+<% end  %>
 </div>

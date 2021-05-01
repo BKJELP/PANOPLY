@@ -6,6 +6,7 @@ class OutfitsController < ApplicationController
 
   def show
     @outfit = Outfit.find(params[:id])
+    @reservations = Reservation.find_by(id: @outfit)
     authorize @outfit
   end
 
