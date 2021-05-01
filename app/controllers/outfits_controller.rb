@@ -1,5 +1,4 @@
 class OutfitsController < ApplicationController
-<<<<<<< HEAD
   def index
     # @outfits = Outfit.all
     @outfits = policy_scope(Outfit).order(created_at: :desc)
