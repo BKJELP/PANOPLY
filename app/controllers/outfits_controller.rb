@@ -17,6 +17,7 @@ class OutfitsController < ApplicationController
 
   def create
     @outfit = Outfit.new(outfit_params)
+    @outfit.user = current_user
     authorize @outfit
     if @outfit.save
       redirect_to outfit_path(@outfit)
@@ -47,6 +48,6 @@ class OutfitsController < ApplicationController
   private
 
   def outfit_params
-    params.require(:outfits).permit(:name, :description, :price, :image, :category, :user_id, :photo)
+    params.require(:outfit).permit(:name, :description, :price, :image, :category, :user_id, :photo)
   end
 end
