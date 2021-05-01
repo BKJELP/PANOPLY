@@ -1,5 +1,4 @@
 class OutfitsController < ApplicationController
-<<<<<<< HEAD
   def index
     # @outfits = Outfit.all
     @outfits = policy_scope(Outfit).order(created_at: :desc)
@@ -50,3 +49,4 @@ class OutfitsController < ApplicationController
   def outfit_params
     params.require(:outfits).permit(:name, :description, :price, :image, :category, :user_id)
   end
+end
