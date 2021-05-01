@@ -15,7 +15,9 @@ class OutfitsController < ApplicationController
 
     def create
         @outfit = Outfit.new(outfit_params)
+        @outfit.user = current_user
         authorize(@outfit)
+        
         if @outfit.save
             redirect_to outfit_path(@outfit)
         else
