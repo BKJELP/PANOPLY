@@ -19,7 +19,9 @@
     <% @outfits.each do |outfit| %>
       <div class="col-4">
         <div class="outfit-card">
-          <div class="outfit-card-image" style="background-image: url('<%= outfit.image %>')"></div>
+          <div class="outfit-card-image text-center">
+            <%= cl_image_tag(outfit.image, crop: :fill) %>
+          </div>
           <div class="outfit-card-content">
             <div class="outfit-card-title">
               <h4><%= outfit.name %></h4>

@@ -8,7 +8,7 @@
         <h1>Category: <%= @outfit.category %></h1>
       </div>
       <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <%= cl_image_tag(@outfit.image, crop: :fill) %>
         <div class="card-product-infos">
           <h2><%= @outfit.name %></h2>
           <p><strong>A bit more about this outfit...</strong></h4>
@@ -22,15 +22,4 @@
       </div>
     </div>     
   </div>
-<<<<<<< HEAD
-
-
-  <div class="outfit-content">
-<%= cl_image_tag(@outfit.image),
-      width: 400, height: 300, crop: :fill) %>
-  </div>
 </div>
-=======
-</div>
-
->>>>>>> master
