@@ -1,15 +1,9 @@
 <%= render 'shared/navbar' %>
-<body>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1518838439236-2b73ceb4638a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1267&q=80);">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class=col-lg-10 text-center>
-        <img class="logo-home" src="/assets/images/logo.png">
-        <h1 class = "text-center">Welcome on PANOPLY</h1>
-        <h2 class = "text-center"> The <i classe="highlighted highlighted-red">outfit marketplace </i>for job appointments</h2>
-          <div class="container text-center">
-            <%= link_to "Browse", outfits_path, class:"btn btn-flat" %>
-          </div>
-      </div>
-    </div>
+    <h1>Welcome on Panoply!</h1>
+    <p>The outfit marketplace for job appointments.</p>
+    <%= link_to "Start now", outfits_path, class:"btn btn-flat" %>
   </div>
-</body>
+</div>
