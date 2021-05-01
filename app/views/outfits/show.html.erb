@@ -20,7 +20,9 @@
       <br>
       <div class="d-flex justify-content-center">
       <% if @outfit.id == @reservations.outfit_id %>
-        <a class="btn btn-flat" href="#">Book now</a>
+        <div class="btn btn-flat">
+         <%= link_to 'Book this outfit', new_outfit_reservation_path(@outfit)%>
+        </div>
       <% else %>
         <p>We are sorry, this outfit is already booked!</p>
       <% end  %>
