@@ -2,17 +2,13 @@
   <div class="row">
     <div class="col-8">
       <div class="flat-show-card">
-        <h1><%= @outfit.category %></h1>
-        <p><%= @outfit.name %></p>
-      </div>
-      <div>
-      <%= image_tag @outfit.image, alt: "Outfit", width: 200 %>
+        <h1>Category: <%= @outfit.category %></h1>
+        <h2><%= @outfit.name %></h2>
       </div>
       <div class="flat-show-card">
-        <h3>A bit more about this outfit...</h3>
-        <p>The daily price to rent this outfit is:</p>
-        <p><%= @outfit.price %></p>
-        <p>This outfit would work nicely if:</p>
+        <h4>A bit more about this outfit...</h4>
+        <p>The daily price to rent this outfit is: <%= @outfit.price %> euro</p>
+        <p>Is this outfit perfect for you?</p>
         <p><%= @outfit.description %></p>
       </div>
     </div>     
