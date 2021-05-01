@@ -6,7 +6,7 @@ class OutfitPolicy < ApplicationPolicy
   end
 
   def create?
-    return true
+    true
   end
 
   def update?
@@ -19,7 +19,19 @@ class OutfitPolicy < ApplicationPolicy
     record.user == user
   end
 
+  def index?
+    true
+  end
+
   def show?
+    true
+  end
+
+  def new?
+    true
+  end
+
+  def list?
     true
   end
 end

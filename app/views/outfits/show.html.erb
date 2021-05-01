@@ -15,11 +15,16 @@
           <p>The daily price to rent this outfit is:<strong> <%= @outfit.price %> euro </strong></p>
           <p><strong>Is this outfit perfect for you?</strong></p>
           <p><%= @outfit.description %></p>
-        </div>  
+        </div>
       </div>
       <div class="d-flex justify-content-center">
         <a class="btn btn-flat" href="#">Book now</a>
       </div>
-    </div>     
+    </div>
   </div>
+<% if @outfit.id == @reservations.outfit_id %>
+  <p>Reservation exists</p>
+<%else%>
+  <p>You can book</p>
+<% end  %>
 </div>
