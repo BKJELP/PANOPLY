@@ -10,6 +10,7 @@ class OutfitsController < ApplicationController
 
     def show
         @outfit = Outfit.find(params[:id])
+        authorize(@outfit)
     end
 
     def create
