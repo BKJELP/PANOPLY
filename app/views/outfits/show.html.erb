@@ -19,11 +19,11 @@
       </div>
       <br>
       <div class="d-flex justify-content-center">
-      <% if @outfit.id == @reservations.outfit_id %>
+      <% if ['pending', 'canceled'].include?(@outfit.reservations.last&.status) %>
         <a class="btn btn-flat" href="#">Book now</a>
       <% else %>
         <p>We are sorry, this outfit is already booked!</p>
-      <% end  %>
+      <% end %>
       </div>
     </div>
   </div>
