@@ -1,21 +1,29 @@
+<%= render 'shared/navbar' %>
+
 <div class="container margin-top-negative">
   <div class="row">
-    <div class="col-8">
-      <div class="flat-show-card">
-        <h1><%= @outfit.category %></h1>
-        <p><%= @outfit.name %></p>
+    <div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1525519288380-5e24e78d2b72?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80)"
+      Breakfast>
+        <h1>Category: <%= @outfit.category %></h1>
       </div>
-      <div class="flat-show-card">
-        <h3>A bit more about this outfit...</h3>
-        <p>The daily price to rent this outfit is:</p>
-        <p><%= @outfit.price %></p>
-        <p>This outfit would work nicely if:</p>
-        <p><%= @outfit.description %></p>
+      <div class="card-product">
+        <%= cl_image_tag(@outfit.image, crop: :fill) %>
+        <div class="card-product-infos">
+          <h2><%= @outfit.name %></h2>
+          <p><strong>A bit more about this outfit...</strong></h4>
+          <p>The daily price to rent this outfit is:<strong> <%= @outfit.price %> euro </strong></p>
+          <p><strong>Is this outfit perfect for you?</strong></p>
+          <p><%= @outfit.description %></p>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <a class="btn btn-flat" href="#">Book now</a>
       </div>
     </div>
   </div>
 <% if @outfit.id == @reservations.outfit_id %>
-  <p>Reservation excists</p>
+  <p>Reservation exists</p>
 <%else%>
   <p>You can book</p>
 <% end  %>
