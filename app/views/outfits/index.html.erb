@@ -41,5 +41,8 @@
       </div>
     <% end %>
   </div>
+  <% if policy(Outfit).create? %>
+  <%= link_to "Rent your outfit!", new_outfit_path %>
+<% end %>
   
 </div>
