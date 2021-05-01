@@ -1,18 +1,28 @@
+<%= render 'shared/navbar' %>
+
 <div class="container margin-top-negative">
   <div class="row">
-    <div class="col-8">
-      <div class="flat-show-card">
+    <div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)"
+      Breakfast>
         <h1>Category: <%= @outfit.category %></h1>
-        <h2><%= @outfit.name %></h2>
       </div>
-      <div class="flat-show-card">
-        <h4>A bit more about this outfit...</h4>
-        <p>The daily price to rent this outfit is: <%= @outfit.price %> euro</p>
-        <p>Is this outfit perfect for you?</p>
-        <p><%= @outfit.description %></p>
+      <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <h2><%= @outfit.name %></h2>
+          <p><strong>A bit more about this outfit...</strong></h4>
+          <p>The daily price to rent this outfit is:<strong> <%= @outfit.price %> euro </strong></p>
+          <p><strong>Is this outfit perfect for you?</strong></p>
+          <p><%= @outfit.description %></p>
+        </div>  
+      </div>
+      <div class="d-flex justify-content-center">
+        <a class="btn btn-flat" href="#">Book now</a>
       </div>
     </div>     
   </div>
+<<<<<<< HEAD
 
 
   <div class="outfit-content">
@@ -20,3 +30,7 @@
       width: 400, height: 300, crop: :fill) %>
   </div>
 </div>
+=======
+</div>
+
+>>>>>>> master

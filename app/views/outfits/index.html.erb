@@ -1,13 +1,11 @@
 <%= render 'shared/navbar' %>
 
 <div class="container mt-3">
-  
   <div class="row">
     <div class="col-12">
       <h1>All our Outfits</h1>
     </div>
   </div>
-
   <div class="row">
     <div class="col">
       <% if @query %>
@@ -17,7 +15,6 @@
       <% end %>
     </div>
   </div>
-
   <div class="row">
     <% @outfits.each do |outfit| %>
       <div class="col-4">
@@ -26,8 +23,8 @@
           <div class="outfit-card-content">
             <div class="outfit-card-title">
               <h4><%= outfit.name %></h4>
+                <p><%= outfit.category %></p>
             </div>
-            <p><%= outfit.category %></p>
             <div class="flex">
               <div class="flex ml-3">
                 <i class="material-icons mr-2">€</i> <%= outfit.price %>
@@ -35,14 +32,15 @@
             </div>
           </div>
           <div class="outfit-card-actions">
-            <%= link_to 'More info', outfit_path(outfit) %>
+            <%= link_to 'More info', outfit_path(outfit), class: "btn btn-flat" %>
           </div>
         </div>
       </div>
     <% end %>
   </div>
-  <% if policy(Outfit).create? %>
-  <%= link_to "Rent your outfit!", new_outfit_path %>
-<% end %>
-  
+  <div class="rent-bouton">
+    <% if policy(Outfit).create? %>
+      <%= link_to "Rent your outfit !", new_outfit_path, class: "btn btn-gradient" %>
+    <% end %>
+  </div>
 </div>
