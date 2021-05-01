@@ -1,1 +1,33 @@
 // Specific CSS for your home-page
+
+body {
+    margin: 0;
+    font-family: "Graphik-Regular", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #555555;
+    text-align: left;
+    background-color: #f8f8f8;
+    position: relative;
+    display: block;
+}
+.h1 {
+    font-weight: 300 !important;
+    font-size: 3.125rem;
+    font-family: "CircularStd-Bold", sans-serif;
+    line-height: 1.4;
+    color: #0E0000;
+}
+
+//Boutons
+.btn-flat {
+    color: white;
+    padding: 8px 24px;
+    border-radius: 4px;
+    background: #1EDD88;
+  }
+  .btn-flat:hover {
+    background: #1BCB7F;
+    color: white;
+  }

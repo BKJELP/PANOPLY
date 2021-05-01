@@ -1,6 +1,15 @@
 <%= render 'shared/navbar' %>
-<h1 class = "text-center">Welcome on PANOPLY</h1>
-<h2 class = "text-center"> The outfit marketplace for job appointments</h2>
-<div class="container text-center">
-  <h4 class="align-center btn btn-success"> <%= link_to( "Browse!", outfits_path) %></h4>
-</div>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class=col-lg-10 text-center>
+        <img class="logo-home" src="/assets/images/logo.png">
+        <h1 class = "text-center">Welcome on PANOPLY</h1>
+        <h2 class = "text-center"> The <i classe="highlighted highlighted-red">outfit marketplace </i>for job appointments</h2>
+          <div class="container text-center">
+            <%= link_to "Browse", outfits_path, class:"btn btn-flat" %>
+          </div>
+      </div>
+    </div>
+  </div>
+</body>
