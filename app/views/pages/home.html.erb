@@ -1,9 +1,57 @@
+<head>
+  <meta charset="UTF-8">
+  <title>My landing page</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
 <%= render 'shared/navbar' %>
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1518838439236-2b73ceb4638a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1267&q=80);">
+<body cz-shortcut-listen="true" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1518838439236-2b73ceb4638a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1267&q=80);">
+
+  <!-- Banner section -->
+<div class="banner">
   <div class="container">
     <h1>Welcome on Panoply!</h1>
     <p>The outfit marketplace for job appointments.</p>
-    <%= link_to "Start now", outfits_path, class:"btn btn-flat" %>
+  </div>
+</div>
+
+
+
+  <!-- "How it works" section -->
+<div class="container">
+  <%= link_to "Start now", outfits_path, class:"btn btn-primary btn-lg" %>
+  <div class="hiw">
+    <h2 class="text-center">How it changes your life</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="images/logo.png" alt="">
+        <h4>Find</h4>
+        <p>Find the perfect outfit for your appointments.</p>
+      </div>
+      <div class="card">
+        <img src="images/logo.png" alt="">
+        <h4>Rent</h4>
+        <p>Rent the outfit for some hours.</p>
+      </div>
+      <div class="card">
+        <img src="images/logo.png" alt="">
+        <h4>Get a job</h4>
+        <p>Be hired for the best job ever.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+  <!-- Footer -->
+<div class="footer">
+  <div class="links">
+    <a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-fw fa-github"></i></a>
+    <a href="#"><i class="fab fa-fw fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
+    <%# <p>This website was coded with <i class="fas fa-heart"></i> at Le Wagon.</p> %>
   </div>
 </div>
