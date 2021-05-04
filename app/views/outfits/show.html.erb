@@ -15,10 +15,17 @@
           <p>The daily price to rent this outfit is:<strong> <%= @outfit.price %> euro </strong></p>
           <p><strong>Is this outfit perfect for you?</strong></p>
           <p><%= @outfit.description %></p>
-        </div>  
+        </div>
       </div>
+      <br>
       <div class="d-flex justify-content-center">
-        <a class="btn btn-flat" href="#">Book now</a>
+      <% if ['pending', 'canceled', 'validated'].include?(@outfit.reservations.last&.status) %>
+        <p>We are sorry, this outfit is already booked!</p>
+      <% else %>
+        <div class="btn btn-flat">
+         <%= link_to 'Book this outfit', new_outfit_reservation_path(@outfit)%>
+        </div>
+      <% end %>
       </div>
       <div class="container">
         <div class="row justify-content-center">
@@ -31,5 +38,6 @@
       </div>
       
     </div>     
+
   </div>
 </div>
