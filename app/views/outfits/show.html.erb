@@ -8,7 +8,7 @@
         <h1>Category: <%= @outfit.category %></h1>
       </div>
       <div class="card-product">
-        <%= cl_image_tag(@outfit.image, crop: :fill) %>
+        <%= cl_image_tag(@outfit.photo.key, crop: :fill) %>
         <div class="card-product-infos">
           <h2><%= @outfit.name %></h2>
           <p><strong>A bit more about this outfit...</strong></h4>
