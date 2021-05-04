@@ -1,5 +1,5 @@
 class Outfit < ApplicationRecord
   belongs_to :user
   has_many :reservations
-  has_one_attached :photo
+  has_many_attached :photos
 end

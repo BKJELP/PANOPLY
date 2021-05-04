@@ -27,17 +27,17 @@ puts 'Creating outfits...'
 file = URI.open('https://res.cloudinary.com/willzor/image/upload/v1619721468/Unic_i1k2aq.jpg')
 tech_interview = Outfit.new(name:"Let's shine as a baby unicorn", description:"You cannot join a unicorn without looking like a unicorn. As simple as that. 100 percent success rate", price:"35", category:"startup")
 tech_interview.user = guillaume
-tech_interview.photo.attach(io: file, filename: 'Unic_i1k2aq.jpg', content_type: 'image/jpg')
+tech_interview.photos.attach(io: file, filename: 'Unic_i1k2aq.jpg', content_type: 'image/jpg')
 
 file = URI.open('https://res.cloudinary.com/willzor/image/upload/v1619721554/banker_nsxcu2.jpg')
 ma_interview = Outfit.new(name:"Become a Wolf of Wall Street", description:"Was Leonardo DiCaprio a professional banker? No but at least he wore the uniform. There is no other factor of success", price:"10000",category:"corporate")
 ma_interview.user = brice
-ma_interview.photo.attach(io: file, filename: 'banker_nsxcu2.jpg', content_type: 'image/jpg')
+ma_interview.photos.attach(io: file, filename: 'banker_nsxcu2.jpg', content_type: 'image/jpg')
 
 file = URI.open('https://res.cloudinary.com/willzor/image/upload/v1619721459/wizard-costume_vxcm2f.jpg')
 teacher_interview = Outfit.new(name:"How to be a magic teacher at Poudlard", description:"Albus Dumbledore has only a uniform and no talent. Be like Albus, become a wizard master.", price: "56", category:"public")
 teacher_interview.user = adrien
-teacher_interview.photo.attach(io: file, filename: 'wizard-costume_vxcm2f.jpg', content_type: 'image/jpg')
+teacher_interview.photos.attach(io: file, filename: 'wizard-costume_vxcm2f.jpg', content_type: 'image/jpg')
 tech_interview.save!
 ma_interview.save!
 teacher_interview.save!
