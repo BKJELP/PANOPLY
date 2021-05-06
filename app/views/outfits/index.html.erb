@@ -19,7 +19,7 @@
       <% if @query %>
         <p>You searched for <strong><%= @query %></strong>. We found <%= @outfits.count %> matching outfits out of our <%= Outfit.count %> on our website.</p>
       <% else %>
-        <p>All our <%= @outfit.count %> outfits.</p>
+        <p>All our <%= @outfits.count %> outfits.</p>
       <% end %>
     </div>
   </div>
