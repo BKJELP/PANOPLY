@@ -1,6 +1,13 @@
 class OutfitsController < ApplicationController
     def index
-        @outfits = policy_scope(Outfit).order(created_at: :desc)
+        @query = params[:query]
+        if params[:query].present?
+            sql_query = "name ILIKE :query 
+            OR description ILIKE :query"
+            @outfits = policy_scope(Outfit).where(sql_query, query: "%#{params[:query]}%")
+        else
+            @outfits = policy_scope(Outfit).order(created_at: :desc)
+        end
     end
 
     def new

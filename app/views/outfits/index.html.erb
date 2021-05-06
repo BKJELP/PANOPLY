@@ -3,15 +3,22 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col-12">
-      <h1>All our Outfits</h1>
+      <%= form_tag outfits_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find an outfit"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
     </div>
   </div>
   <div class="row">
     <div class="col">
       <% if @query %>
-        <p>You searched for <strong><%= @query %></strong>. We found <%= @outfits.count %> outfits out of our <%= Outfit.count %> on our website.</p>
+        <p>You searched for <strong><%= @query %></strong>. We found <%= @outfits.count %> matching outfits out of our <%= Outfit.count %> on our website.</p>
       <% else %>
-        <p>All our <%= Outfit.count %> outfits.</p>
+        <p>All our <%= @outfit.count %> outfits.</p>
       <% end %>
     </div>
   </div>
