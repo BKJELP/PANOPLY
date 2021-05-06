@@ -19,7 +19,7 @@
       </div>
       <br>
       <div class="d-flex justify-content-center">
-      <% if ['pending', 'canceled', 'validated'].include?(@outfit.reservations.last&.status) %>
+      <% if ['validated'].include?(@outfit.reservations.last&.status) %>
         <p>We are sorry, this outfit is already booked!</p>
       <% else %>
         <div class="btn btn-flat">
