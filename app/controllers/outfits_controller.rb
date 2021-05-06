@@ -11,6 +11,7 @@ class OutfitsController < ApplicationController
     def show
         @outfit = Outfit.find(params[:id])
         authorize(@outfit)
+        @reservation = Reservation.new
     end
 
     def create
