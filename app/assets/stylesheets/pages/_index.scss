@@ -37,7 +37,8 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 600px;
+  height: 200px;
+  margin-bottom: 30px;
   }
 .outfit-card > img {
   height: 200px;
@@ -61,7 +62,7 @@
   margin: 0;
   }
 .outfit-card-actions {
-  padding: 16px;   
+  padding: 16px;
   align-items: center;
   position: relative;
 }
@@ -79,7 +80,7 @@ width: auto;
 }
 
 .price {
-  
+
 }
 
 //-------------------------------------------------------------------------------

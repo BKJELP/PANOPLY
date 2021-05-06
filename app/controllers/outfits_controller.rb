@@ -2,7 +2,7 @@ class OutfitsController < ApplicationController
     def index
         @query = params[:query]
         if params[:query].present?
-            sql_query = "name ILIKE :query 
+            sql_query = "name ILIKE :query
             OR description ILIKE :query"
             @outfits = policy_scope(Outfit).where(sql_query, query: "%#{params[:query]}%")
         else
@@ -21,37 +21,44 @@ class OutfitsController < ApplicationController
         @reservation = Reservation.new
     end
 
-    def create
-        @outfit = Outfit.new(outfit_params)
-        @outfit.user = current_user
-        authorize(@outfit)
-        
-        if @outfit.save
-            redirect_to outfit_path(@outfit)
-        else
-            render "new"
-        end
-    end
+  def create
+    @outfit = Outfit.new(outfit_params)
+    @outfit.user = current_user
+    authorize(@outfit)
 
-    def list
-        @outfits = Outfit.find(params[:user_id])
+    if @outfit.save
+      redirect_to outfit_path(@outfit)
+    else
+      render "new"
     end
+  end
 
-    def update
-        @outfit = Outfit.find(params[:id])
-        @outfit.update(outfit_params)
-        redirect_to outfit_path(@outfit)
-    end
+  def list
+    @outfits = Outfit.find(params[:user_id])
+  end
 
-    def destroy
-        @outfit = Outfit.find(params[id])
-        @outfit.destroy
-        redirect_to outfit_path
-    end
+  def edit
+    @outfit = Outfit.find(params[:id])
+    authorize(@outfit)
+  end
+
+  def update
+    @outfit = Outfit.find(params[:id])
+    authorize(@outfit)
+    @outfit.update(outfit_params)
+    # @outfit.assign_attributes(outfit_params)
+    redirect_to outfit_path(@outfit)
+  end
+
+  def destroy
+    @outfit = Outfit.find(params[id])
+    @outfit.destroy
+    redirect_to outfit_path
+  end
 
 private
 
-    def outfit_params
-        params.require(:outfit).permit(:name, :description, :price, :image, :category, :user_id, photos: [])
-    end
+  def outfit_params
+    params.require(:outfit).permit(:id, :name, :description, :price, :category, :image, :user_id, photos: [])
+  end
 end
