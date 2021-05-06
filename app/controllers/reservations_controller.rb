@@ -4,12 +4,6 @@ class ReservationsController < ApplicationController
     authorize @reservations
   end
 
-  def new
-    @outfit = Outfit.find(params[:outfit_id])
-    @reservation = Reservation.new
-    authorize @reservation
-  end
-
   def create
     @reservation = Reservation.new(reservation_params)
     @outfit = Outfit.find(params[:outfit_id])
@@ -27,17 +21,14 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:edit])
     authorize @reservation
     @reservation.update(reservation_params)
-    redirect_to outfit_path(@outft)
+    redirect_to outfit_path(@outfit)
   end
 
   def status
-  @reservation = Reservation.find(params[:status])
-  authorize @reservation
-    if params[:status] = 'accept'
-      @reservation.status = 'validated'
-    elsif params[:status] = 'decline'
-      @reservation.status = "canceled"
-    end
+    @reservation = Reservation.find(params[:id])
+    authorize @reservation
+    @reservation.update(status: params[:status])
+    redirect_to dashboard_path
   end
 
   private
