@@ -2,6 +2,9 @@
 @import "home";
 @import "reservation";
 
+//Global
+
+
 // Boutons
 .btn-flat {
   color: white;
@@ -11,10 +14,12 @@
   transition: background 0.3s ease;
   position: center;
   }
+
 .btn-flat:hover {
   background: #1BCB7F;
   color: white;
   }
+
 .btn-gradient {
   color: white;
   padding: 8px 24px;
@@ -24,12 +29,18 @@
   transition: background 0.3s ease;
   border: 1px solid #0F60C4;
   }
+
 .btn-gradient:hover {
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
   }
-  .rent-bouton {
+
+.rent-bouton {
     margin-top: 20px ;
+}
+
+.form-control {
+  margin-left: 88px;
 }
 
 // Cards
@@ -39,27 +50,26 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   height: 600px;
   }
-.outfit-card > img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-  }
+
 .outfit-card h4 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
   }
+
 .outfit-card-content {
   padding: 16px;
   justify-content: space-between;
   align-items: center;
   position: relative;
   }
-.card-trip p {
-  font-size: 12px;
+
+.category {
+  font-size: 15px;
   opacity: .7;
-  margin: 0;
+  margin-top: 5px;
   }
+
 .outfit-card-actions {
   padding: 16px;   
   align-items: center;
@@ -67,7 +77,11 @@
 }
 
 .flex {
-width: auto;
+  width: auto;
+}
+
+.img-fluid {
+  padding: 15px;
 }
 
 .name {
@@ -82,44 +96,25 @@ width: auto;
   
 }
 
-//-------------------------------------------------------------------------------
-
-.card-outfit {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.card-outfit > img {
-  height: 200px;
-  width: auto;
-  object-fit: cover;
-}
-
-.card-outfit h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-outfit p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
-
-.card-outfit .card-outfit-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-}
-
-.card-outfit-infos .card-outfit-user {
+//Footer
+.footer {
+  text-align: center;
+  padding: 5px;
+  background-color: rgba(255,255,255,0.5);
   position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
+  width: 100%; height: 50px;
+  bottom: 0; left: 0; right: 0;
 }
 
+.footer a {
+  font-size: 30px;
+  color:  #1EDD88;
+}
+
+.footer p {
+  color: #6B6C6C;
+}
+
+.footer .fas {
+  color: #BF0F12;
+}
