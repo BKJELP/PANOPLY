@@ -1,101 +1,90 @@
 <%= render 'shared/navbar' %>
 
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-12">
-      <%= form_tag outfits_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find an outfit"
-        %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-  </div>
+<div class= "container">
+  <body cz-shortcut-listen="true" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1585914924626-15adac1e6402?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80);">
 
-  <div class="row">
-    <div class="col">
-      <% if @query %>
-        <p>You searched for <strong><%= @query %></strong>. We found <%= @outfits.count %> matching outfits out of our <%= Outfit.count %> on our website.</p>
-      <% else %>
-        <p>All our <%= @outfits.count %> outfits.</p>
-      <% end %>
-    </div>
-  </div>
-  
-  <div class="row">
-    <% @outfits.each do |outfit| %>
-      <div class="col-4">
-        <div class="outfit-card">
-          <div class="outfit-card-image text-center">
-            <%= cl_image_tag(outfit.photos.first.key, crop: :fill) %>
-          </div>
-          <div class="outfit-card-content">
-            <div class="outfit-card-title">
-              <div class="name">
-                <h4><%= outfit.name %></h4>
-              </div>
-              <div class=category>
-                <p><%= outfit.category %></p>
-              </div>            
-            </div>
-            <div class="flex">
-              <div class="flex ml-3">
-                <div class=price>
-                  <i class="material-icons mr-2">€ per day:</i> <%= outfit.price %>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="outfit-card-actions">
-            <%= link_to 'More info', outfit_path(outfit), class: "btn btn-flat" %>
-          </div>
+  <div class="container mt-3">
+    <div class="row">
+        <div class="col-12">
+          <h1>All our Outfits</h1>
         </div>
       </div>
-    <% end %>
-  </div>
 
-  <div class="rent-bouton">
-    <% if policy(Outfit).create? %>
-      <%= link_to "Rent your outfit !", new_outfit_path, class: "btn btn-gradient" %>
-    <% end %>
-  </div>
-</div>
-
-<%# --------------------------------------------------------------------------------- %>
-<div class="container mt-3">
-  <div class="row">
-      <div class="col-12">
-        <h1>All our Outfits</h1>
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col-8">
+        <%= form_tag outfits_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find an outfit to get your futur job"
+          %>
       </div>
-    </div>
-
-  <div class="row">
-      <div class="col">
-        <% if @query %>
-          <p>You searched for <strong><%= @query %></strong>. We found <%= @outfits.count %> outfits out of our <%= Outfit.count %> on our website.</p>
-        <% else %>
-          <p>All our <%= Outfit.count %> outfits.</p>
+      <div class="col-4">
+          <div class= "btnsearch">
+            <%= submit_tag "Search", class: "btn btn-gradient" %>
+          </div>
         <% end %>
       </div>
     </div>
 
-  <div class="row">
-      <div class="col-4">
-        <div class="card-outfit text-center">
-
-          <% @outfits.each do |outfit| %>
-            <%= cl_image_tag(outfit.photos.first.key, crop: :fill) %>
-            <div class="card-outfit-infos">
-              <div>
-                <h2><%= outfit.name %></h2>
-                <p><%= outfit.category %></p>
-              </div>
-              <h2 class="card-outfit-pricing"><%= outfit.price %> €</h2>
-          </div>
-          <% end %>
-        
-        </div>
+    <div class="row">
+      <div class="col">
+        <% if @query %>
+          <p>You searched for <strong><%= @query %></strong>. We found <%= @outfits.count %> matching outfits out of our <%= Outfit.count %> on our website.</p>
+        <% else %>
+          <p>All our <%= @outfits.count %> outfits.</p>
+        <% end %>
       </div>
+    </div>
+    
+    <div class="row">
+      <% @outfits.each do |outfit| %>
+        <div class="col-4">
+          <div class="outfit-card">
+            <div class="img-fluid img-thumbnail">
+              <%= cl_image_tag(outfit.photos.first.key, crop: :fill) %>
+            </div>
+            <div class="outfit-card-content">
+              <div class="outfit-card-title">
+                <div class="name">
+                  <h4><%= outfit.name %></h4>
+                </div>
+                <div class=category>
+                  <p class="category"><%= outfit.category %></p>
+                </div>            
+              </div>
+              <div class="flex">
+                <div class="flex ml-3">
+                  <div class=price>
+                    <i class="material-icons mr-2">€ per day:</i> <%= outfit.price %>
+                  </div>
+                </div>
+              </div>
+              <div class="outfit-card-actions">
+                <%= link_to 'More info', outfit_path(outfit), class: "btn btn-flat" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="rent-bouton">
+      <% if policy(Outfit).create? %>
+        <%= link_to "Rent your outfit !", new_outfit_path, class: "btn btn-gradient" %>
+      <% end %>
+    </div>
+
+      <div class="footer">
+    <div class="links">
+      <a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-fw fa-github"></i></a>
+      <a href="#"><i class="fab fa-fw fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
+      <%# <p>This website was coded with <i class="fas fa-heart"></i> at Le Wagon.</p> %>
+    </div>
   </div>
+  
+  </div>
+</div>
