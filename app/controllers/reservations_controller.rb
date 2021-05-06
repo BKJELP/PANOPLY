@@ -4,12 +4,6 @@ class ReservationsController < ApplicationController
     authorize @reservations
   end
 
-  def new
-    @outfit = Outfit.find(params[:outfit_id])
-    @reservation = Reservation.new
-    authorize @reservation
-  end
-
   def create
     @reservation = Reservation.new(reservation_params)
     @outfit = Outfit.find(params[:outfit_id])

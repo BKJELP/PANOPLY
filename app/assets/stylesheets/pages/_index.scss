@@ -9,6 +9,7 @@
   border-radius: 4px;
   background: #1EDD88;
   transition: background 0.3s ease;
+  position: center;
   }
 .btn-flat:hover {
   background: #1BCB7F;
@@ -27,12 +28,16 @@
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
   }
+  .rent-bouton {
+    margin-top: 20px ;
+}
 
 // Cards
 .outfit-card {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 600px;
   }
 .outfit-card > img {
   height: 200px;
@@ -46,9 +51,8 @@
   }
 .outfit-card-content {
   padding: 16px;
-  display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   position: relative;
   }
 .card-trip p {
@@ -57,18 +61,65 @@
   margin: 0;
   }
 .outfit-card-actions {
+  padding: 16px;   
+  align-items: center;
+  position: relative;
+}
+
+.flex {
+width: auto;
+}
+
+.name {
+
+}
+
+.category {
+
+}
+
+.price {
+  
+}
+
+//-------------------------------------------------------------------------------
+
+.card-outfit {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-outfit > img {
+  height: 200px;
+  width: auto;
+  object-fit: cover;
+}
+
+.card-outfit h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-outfit p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-outfit .card-outfit-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
 }
-.rent-bouton {
-    margin-top: 20px ;
-}
-.flex {
-width:100px;
-}
 
-
+.card-outfit-infos .card-outfit-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
 
