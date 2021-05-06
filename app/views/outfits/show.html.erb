@@ -36,15 +36,6 @@
         <% end %>
       <% end %>
       </div>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12 col-lg-6">
-            <% @outfit.photos.each do |photo| %>
-            <%= cl_image_tag photo.key, crop: :fill %>
-            <% end %>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
