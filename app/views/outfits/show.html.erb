@@ -19,7 +19,7 @@
       <br>
       <br>
       <% if current_user.id == @outfit.user_id %>
-        <div class: "btn-flat" %>
+        <div class= "btn-flat">
           <%= link_to "Edit this outfit",  edit_outfit_path(@outfit) %>
         </div>
       <% end %>
@@ -30,8 +30,8 @@
         <p>We are sorry, this outfit is already booked!</p>
       <% else %>
         <%= simple_form_for [ @outfit, @reservation ] do |f| %>
-          <%= f.input :start_date %>
-          <%= f.input :end_date %>
+          <%= f.input :start_date, html5: true %>
+          <%= f.input :end_date, html5: true %>
           <%= f.submit "Book this outfit", class: "btn-flat:hover" %>
         <% end %>
       <% end %>
