@@ -1,4 +1,4 @@
-<div class="container mt-3">
+<div class="container mt-5">
 
   <div class="row">
     <div class="col-12">
@@ -7,11 +7,15 @@
   </div>
 </div>
 
+<br>
 
 <div class="container mt-5">
-  <h2>My outfits</h2>
+  <div class="card-category-show mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1542060748-10c28b62716f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)">
+    <h2>My outfits</h2>
+  </div>
   <br>
-  <div class=grid >
+  <br>
+  <div class=grid>
     <% @outfits.each do |outfit| %>
       <div class="reservation-card d-flex justify-content-between">
         <%= cl_image_tag(outfit.photos.first.key, crop: :fill) %>
@@ -30,9 +34,15 @@
   </div>
 </div>
 
+<br>
+<br>
+<br>
 
 <div class="container mt-5">
-  <h2>My reservations</h2>
+  <div class="card-category-show mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1541840031508-326b77c9a17e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80)">
+    <h2>My reservations</h2>
+  </div>
+    <br>
     <br>
     <div class=grid>
     <% @my_reservations.each do |reservation| %>
@@ -48,23 +58,28 @@
   </div>
 </div>
 
+<br>
+<br>
+<br>
 
 
-<div class="container mt-3">
-  <h2>Reservations requests</h2>
+
+
+<div class="container mt-5">
+  <div class="card-category-show mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1565539433134-f41a89c7346e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80)">
+    <h2>Reservations requests</h2>
+  </div>
   <br>
   <br>
-  <h3>To be answered</h3>
+  <h4>To be answered</h4>
   <br>
   <div class=grid>
-    <% @my_received_pending_reservations.each do |reservation| %>
-      <div class="col-8">
-        <div class="reservation-card">
-          <div class="reservation-card-content">
-            <div class="reservation-card-title">
-              <h4>Rentor identity: <%=reservation.user.first_name%> <%=reservation.user.last_name%></h4>
-            </div>
-            <p>Outfit: <%= reservation.outfit.name %></p>
+    <% @received_reservations.each do |reservation| %>
+      <% if reservation.status == "pending" %>
+        <div class="reservation-card d-flex justify-content-between">
+          <%= cl_image_tag(reservation.outfit.photos.first.key, crop: :fill) %>
+          <div class="reservation-card-content d-flex align-items-start flex-column">
+            <h2>Outfit: <%= reservation.outfit.name %></h2>
             <p>Booking Period: <%= reservation.start_date.strftime("%A, %b %d") %> - <%= reservation.end_date.strftime("%A, %b %d") %></p>
             <p>Booking Status: <%= reservation.status %></p>
             <div class="reservation-card-actions">
@@ -73,29 +88,32 @@
             </div>
           </div>
         </div>
+
+      <% end %>
     <% end %>
   </div>
   <br>
   <br>
-  <h3>Already validated</h3>
+  <h4>Already validated</h4>
   <br>
   <div class=grid>
-    <% @my_received_validated_reservations.each do |reservation| %>
-      <div class="col-8">
-        <div class="reservation-card">
-          <div class="reservation-card-content">
-            <div class="reservation-card-title">
-              <h4>Rentor identity: <%=reservation.user.first_name%> <%=reservation.user.last_name%></h4>
-            </div>
-            <p>Outfit: <%= reservation.outfit.name %></p>
-            <p>Booking Period: <%= reservation.start_date.strftime("%A, %b %d") %> - <%= reservation.end_date.strftime("%A, %b %d") %></p>
-            <p>Booking Status: <%= reservation.status %></p>
-            <div class="reservation-card-actions">
-              <%= link_to 'Validate', status_reservation_path(reservation, status: 'validated'), method: :patch %>
-              <%= link_to 'Decline', status_reservation_path(reservation, status: 'canceled'), method: :patch %>
+    <% @received_reservations.each do |reservation| %>
+      <% if reservation.status == "validated" %>
+          <div class="reservation-card d-flex justify-content-between">
+            <%= cl_image_tag(reservation.outfit.photos.first.key, crop: :fill) %>
+            <div class="reservation-card-content d-flex align-items-start flex-column">
+              <h2>Outfit: <%= reservation.outfit.name %></h2>
+              <p>Booking Period: <%= reservation.start_date.strftime("%A, %b %d") %> - <%= reservation.end_date.strftime("%A, %b %d") %></p>
+              <p>Booking Status: <%= reservation.status %></p>
             </div>
           </div>
-        </div>
+        <% end %>
     <% end %>
   </div>
+  <br>
+  <br>
+  <br>
 </div>
+
+
+
