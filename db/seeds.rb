@@ -7,8 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
 puts 'We delete the old data'
-User.destroy_all
+Reservation.destroy_all
 Outfit.destroy_all
+User.destroy_all
 
 
 puts 'Creating admin...'
