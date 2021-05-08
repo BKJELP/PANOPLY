@@ -19,14 +19,16 @@
     <% @outfits.each do |outfit| %>
       <div class="reservation-card d-flex justify-content-between">
         <%= cl_image_tag(outfit.photos.first.key, crop: :fill) %>
-        <div class="reservation-card-content d-flex align-items-start flex-column">
-          <h2><%= outfit.name %></h4>
-          </p><%= outfit.category %></p>
-          <div class="flex ml-3">
-            <div class=price><i class="material-icons mr-2">€</i> <%= outfit.price %></div>
+        <div class="card-padding relative-position align-content-center flex-wrap">
+          <div class="reservation-card-content d-flex align-items-start flex-column">
+            <h2><%= outfit.name %></h4>
+            </p><%= outfit.category %></p>
+            <div class="flex ml-3">
+              <div class=price><i class="material-icons mr-2">€</i> <%= outfit.price %></div>
+            </div>
           </div>
-          <div class="outfit-card-actions btn btn-outline-secondary mt-auto btn-radius">
-            <%= link_to 'Update your outfit', edit_outfit_path(outfit.id) %>
+          <div class="outfit-card-actions">
+            <p class="btn btn-outline-secondary mt-auto btn-radius"><%= link_to 'Update your outfit', edit_outfit_path(outfit.id) %></p>
           </div>
         </div>
       </div>
@@ -50,8 +52,10 @@
         <%= cl_image_tag(reservation.outfit.photos.first.key, crop: :fill) %>
         <div class="reservation-card-content">
           <h2>Outfit: <%= reservation.outfit.name %></h2>
+          <br>
           <p>Booking Period: <%= reservation.start_date.strftime("%A, %b %d") %> - <%= reservation.end_date.strftime("%A, %b %d") %></p>
-          <p>Booking Status: <%= reservation.status %></p>
+          <br>
+          <p class="badge badge-success"><%= reservation.status %></p>
         </div>
       </div>
     <% end %>
@@ -103,8 +107,10 @@
             <%= cl_image_tag(reservation.outfit.photos.first.key, crop: :fill) %>
             <div class="reservation-card-content d-flex align-items-start flex-column">
               <h2>Outfit: <%= reservation.outfit.name %></h2>
+              <br>
               <p>Booking Period: <%= reservation.start_date.strftime("%A, %b %d") %> - <%= reservation.end_date.strftime("%A, %b %d") %></p>
-              <p>Booking Status: <%= reservation.status %></p>
+              <br>
+              <p class="badge badge-success"><%= reservation.status %></p>
             </div>
           </div>
         <% end %>
