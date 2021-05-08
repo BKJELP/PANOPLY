@@ -7,10 +7,10 @@
 @import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
 
 /* Utilities */
-body {
+body p {
   margin: 0;
   font-family: Open Sans;
-  background: no-repeat center/100%;
+  background: no-repeat center;
 }
 
 h1, h2, h3, h4 {
@@ -53,7 +53,7 @@ a {
 }
 
 .card p {
-  opacity: .5;
+  opacity: 1;
 }
 
 .card {
@@ -102,7 +102,7 @@ height: 250px;
 }
 
 .footer p {
-  color: #6B6C6C;
+  color: #111616;
 }
 
 .footer .fas {
