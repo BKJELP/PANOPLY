@@ -132,9 +132,18 @@ p {
   padding: 4px;
   align-items: center;
   radius: 50%;
+  position: relative;
+  radius: 50%;
+  
+}
+.outfit-card-actions-dahsboard {
+  padding: 4px;
+  align-items: center;
+  radius: 50%;
   position: absolute;
   bottom: 10px;
   right: 20px;
+  
 }
 
 .card-padding {
