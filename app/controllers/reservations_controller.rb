@@ -10,7 +10,7 @@ class ReservationsController < ApplicationController
     @reservation.outfit_id = @outfit.id
     @reservation.user_id = current_user.id
     authorize @reservation
-    if @reservation.save
+    if @reservation.save!
       redirect_to outfit_path(@outfit)
     else
       render "new"

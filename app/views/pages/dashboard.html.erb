@@ -8,7 +8,7 @@
     </div>
   </div>
 
-  <h2>outfits</h2>
+  <h2>My outfits</h2>
 
   <div class="row">
     <% @outfits.each do |outfit| %>
@@ -19,7 +19,7 @@
             <div class="outfit-card-title">
               <h4><%= outfit.name %></h4>
             </div>
-            <p><%= outfit.category %></p>
+              <p><%= outfit.category %></p>
             <div class="flex">
               <div class="flex ml-3">
                 <i class="material-icons mr-2">€</i> <%= outfit.price %>
@@ -27,7 +27,7 @@
             </div>
           </div>
           <div class="outfit-card-actions">
-            <%= link_to 'More info', outfit_path(outfit) %>
+            <%= link_to 'Update your outfit', edit_outfit_path(outfit.id) %>
           </div>
         </div>
       </div>
@@ -36,7 +36,9 @@
 </div>
 
   <h2>My received reservations</h2>
-
+  <br>
+  <h3>To be answered</h3>
+  <br>
   <div class="row">
     <% @my_received_pending_reservations.each do |reservation| %>
       <div class="col-8">
@@ -45,7 +47,7 @@
             <div class="reservation-card-title">
               <h4>Rentor identity: <%=reservation.user.first_name%> <%=reservation.user.last_name%></h4>
             </div>
-            <p>Booking Period: <%= reservation.start_date %> - <%= reservation.end_date %></p>
+            <p>Booking Period: <%= reservation.start_date.strftime("%A, %b %d") %> - <%= reservation.end_date.strftime("%A, %b %d") %></p>
             <p>Booking Status: <%= reservation.status %></p>
             <div class="reservation-card-actions">
               <%= link_to 'Validate', status_reservation_path(reservation, status: 'validated'), method: :patch %>
@@ -55,5 +57,9 @@
         </div>
     <% end %>
   </div>
+  <br>
+  <br>
+  <h3>To be answered</h3>
+
 
   <br>

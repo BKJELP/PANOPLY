@@ -7,8 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
 puts 'We delete the old data'
-Outfit.destroy_all
 User.destroy_all
+Outfit.destroy_all
+
 
 puts 'Creating admin...'
 
@@ -23,6 +24,26 @@ adrien.save!
 puts 'Finished!'
 
 puts 'Creating outfits...'
+
+file = URI.open('https://res.cloudinary.com/willzor/image/upload/v1620323847/Paysan_guchcv.jpg')
+farming = Outfit.new(name:"get country style farmer", description: "Ya don't want to come in a childish n urban style to an outside job adn that's why i propose you my farmer outfit, i promise you will make good impression to ur boss and yo ll sweat with ease in this farmer outfit", price: 21, category: "Outdoor")
+farming.user = guillaume
+farming.photos.attach(io: file, filename: 'Paysan_guchcv.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://res.cloudinary.com/willzor/image/upload/v1620325590/Astronaut_xijutg.jpg')
+astro = Outfit.new(name: "get hight safely", description: "You really don't want to go in space with a tee-shirt, prove your future employer that you know this fact by commig fully geared", price: 9900, category: "other")
+astro.user = brice
+astro.photos.attach(io: file, filename: 'Astronaut_xijutg.jpg', content_type: 'image.jpg')
+
+file = URI.open('https://res.cloudinary.com/willzor/image/upload/v1620326388/scientist_sqoljo.jpg')
+scientist = Outfit.new(name: "√Credibility = Style²", description: "Everyone think you're smart and intoo science when you have a white lab coat, it's used but not dirty, just enought to imply your ability", price: 34, category: "Academic")
+scientist.user = adrien
+scientist.photos.attach(io: file, filename: 'scientist_sqoljo.jpg', content_type: 'image.jpg')
+
+file = URI.open('https://res.cloudinary.com/willzor/image/upload/v1620324814/bucheron_xoabdf.jpg')
+lumberjack = Outfit.new(name:"Lumberjack Perfect", description: "You seriously think you can work in job involving trees without your red lumberjack shirt?", price: 23, category: "Outdoor")
+lumberjack.user = william
+lumberjack.photos.attach(io: file, filename: 'bucheron_xoabdf.jpg', content_type: 'image/jgg')
 
 file = URI.open('https://res.cloudinary.com/willzor/image/upload/v1620322738/UniM_qacn6t.jpg')
 tech_interview = Outfit.new(name:"Let's shine as a baby unicorn", description:"You cannot join a unicorn without looking like a unicorn. As simple as that. 100 percent success rate", price:"35", category:"startup")
@@ -41,5 +62,9 @@ teacher_interview.photos.attach(io: file, filename: 'witch_gjvakf.jpg', content_
 tech_interview.save!
 ma_interview.save!
 teacher_interview.save!
+farming.save!
+lumberjack.save!
+astro.save!
+scientist.save!
 puts 'Finished!'
 
