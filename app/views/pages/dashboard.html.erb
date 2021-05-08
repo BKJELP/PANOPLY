@@ -7,22 +7,25 @@
       <h1><%= current_user.full_name %>'s profile</h1>
     </div>
   </div>
+</div>
 
+
+<div class="container mt-3">
   <h2>My outfits</h2>
-
-  <div class="row">
+  <br>
+  <div class=grid >
     <% @outfits.each do |outfit| %>
       <div class="col-4">
         <div class="outfit-card">
-          <div class="outfit-card-image" style="background-image: url('<%= outfit.image %>')"></div>
+          <div class="img-fluid img-thumbnail"><%= cl_image_tag(outfit.photos.first.key, crop: :fill) %></div>
           <div class="outfit-card-content">
             <div class="outfit-card-title">
               <h4><%= outfit.name %></h4>
             </div>
-              <p><%= outfit.category %></p>
+            <div class=category><p class="category"><%= outfit.category %></p></div>
             <div class="flex">
               <div class="flex ml-3">
-                <i class="material-icons mr-2">€</i> <%= outfit.price %>
+                <div class=price><i class="material-icons mr-2">€</i> <%= outfit.price %></div>
               </div>
             </div>
           </div>
@@ -35,11 +38,33 @@
   </div>
 </div>
 
-  <h2>My received reservations</h2>
+
+<div class="container mt-3">
+  <h2>My reservations</h2>
+    <br>
+    <div class=grid>
+    <% @my_reservations.each do |reservation| %>
+      <div class="reservation-card d-flex justify-content-between">
+        <%= cl_image_tag(reservation.outfit.photos.first.key, crop: :fill) %>
+        <div class="reservation-card-content">
+          <h2>Outfit: <%= reservation.outfit.name %></h2>
+          <p>Booking Period: <%= reservation.start_date.strftime("%A, %b %d") %> - <%= reservation.end_date.strftime("%A, %b %d") %></p>
+          <p>Booking Status: <%= reservation.status %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+<div class="container mt-3">
+  <h2>Reservations requests</h2>
+  <br>
   <br>
   <h3>To be answered</h3>
   <br>
-  <div class="row">
+  <div class=grid>
     <% @my_received_pending_reservations.each do |reservation| %>
       <div class="col-8">
         <div class="reservation-card">
@@ -47,6 +72,7 @@
             <div class="reservation-card-title">
               <h4>Rentor identity: <%=reservation.user.first_name%> <%=reservation.user.last_name%></h4>
             </div>
+            <p>Outfit: <%= reservation.outfit.name %></p>
             <p>Booking Period: <%= reservation.start_date.strftime("%A, %b %d") %> - <%= reservation.end_date.strftime("%A, %b %d") %></p>
             <p>Booking Status: <%= reservation.status %></p>
             <div class="reservation-card-actions">
@@ -59,7 +85,25 @@
   </div>
   <br>
   <br>
-  <h3>To be answered</h3>
-
-
+  <h3>Already validated</h3>
   <br>
+  <div class=grid>
+    <% @my_received_validated_reservations.each do |reservation| %>
+      <div class="col-8">
+        <div class="reservation-card">
+          <div class="reservation-card-content">
+            <div class="reservation-card-title">
+              <h4>Rentor identity: <%=reservation.user.first_name%> <%=reservation.user.last_name%></h4>
+            </div>
+            <p>Outfit: <%= reservation.outfit.name %></p>
+            <p>Booking Period: <%= reservation.start_date.strftime("%A, %b %d") %> - <%= reservation.end_date.strftime("%A, %b %d") %></p>
+            <p>Booking Status: <%= reservation.status %></p>
+            <div class="reservation-card-actions">
+              <%= link_to 'Validate', status_reservation_path(reservation, status: 'validated'), method: :patch %>
+              <%= link_to 'Decline', status_reservation_path(reservation, status: 'canceled'), method: :patch %>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>
