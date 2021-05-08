@@ -10,26 +10,20 @@
 </div>
 
 
-<div class="container mt-3">
+<div class="container mt-5">
   <h2>My outfits</h2>
   <br>
   <div class=grid >
     <% @outfits.each do |outfit| %>
-      <div class="col-4">
-        <div class="outfit-card">
-          <div class="img-fluid img-thumbnail"><%= cl_image_tag(outfit.photos.first.key, crop: :fill) %></div>
-          <div class="outfit-card-content">
-            <div class="outfit-card-title">
-              <h4><%= outfit.name %></h4>
-            </div>
-            <div class=category><p class="category"><%= outfit.category %></p></div>
-            <div class="flex">
-              <div class="flex ml-3">
-                <div class=price><i class="material-icons mr-2">€</i> <%= outfit.price %></div>
-              </div>
-            </div>
+      <div class="reservation-card d-flex justify-content-between">
+        <%= cl_image_tag(outfit.photos.first.key, crop: :fill) %>
+        <div class="reservation-card-content d-flex align-items-start flex-column">
+          <h2><%= outfit.name %></h4>
+          </p><%= outfit.category %></p>
+          <div class="flex ml-3">
+            <div class=price><i class="material-icons mr-2">€</i> <%= outfit.price %></div>
           </div>
-          <div class="outfit-card-actions">
+          <div class="outfit-card-actions btn btn-outline-secondary mt-auto btn-radius">
             <%= link_to 'Update your outfit', edit_outfit_path(outfit.id) %>
           </div>
         </div>
@@ -39,7 +33,7 @@
 </div>
 
 
-<div class="container mt-3">
+<div class="container mt-5">
   <h2>My reservations</h2>
     <br>
     <div class=grid>
