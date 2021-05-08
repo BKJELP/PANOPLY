@@ -1,0 +1,39 @@
+.reservation-card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 200px;
+}
+
+.reservation-card img {
+  height: 100%;
+}
+
+.reservation-card h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.reservation-card p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.reservation-card .reservation-card-content {
+  // padding: 16px;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: flex-end;
+  // position: relative;
+}
+
+.reservation-card .reservation-card-content {
+  padding: 20px;
+}
+
+.btn-radius {
+  border-radius: 10px;
+}

@@ -13,6 +13,5 @@ class PagesController < ApplicationController
 
     @my_received_pending_reservations = current_user.pendings
     @my_received_validated_reservations = current_user.validated
-
   end
 end

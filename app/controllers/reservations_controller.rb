@@ -11,7 +11,8 @@ class ReservationsController < ApplicationController
     @reservation.user_id = current_user.id
     authorize @reservation
     if @reservation.save!
-      redirect_to outfit_path(@outfit)
+      flash[:notice] = "Congratulations, your booking has been successefully registered. Please wait for the owner answer"
+      redirect_to dashboard_path
     else
       render "new"
     end
