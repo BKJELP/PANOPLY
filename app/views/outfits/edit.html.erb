@@ -10,4 +10,5 @@
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.submit "Update this outfit", class: "btn btn-primary" %>
   <% end %>
+  <%= link_to("Return", outfit_path(@outfit)) %>
 </div>
