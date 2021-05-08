@@ -57,7 +57,7 @@ ma_interview.user = brice
 ma_interview.photos.attach(io: file, filename: 'banker_nsxcu2.jpg', content_type: 'image/jpg')
 
 file = URI.open('https://res.cloudinary.com/willzor/image/upload/v1620322662/witch_gjvakf.jpg')
-teacher_interview = Outfit.new(name:"How to be a magic teacher at Poudlard", description:"Albus Dumbledore has only a uniform and no talent. Be like Albus, become a wizard master.", price: "56", category:"Other")
+teacher_interview = Outfit.new(name:"Magic Teacher or similar", description:"Albus Dumbledore has only a uniform and no talent. Be like Albus, become a wizard master.", price: "56", category:"Other")
 teacher_interview.user = adrien
 teacher_interview.photos.attach(io: file, filename: 'witch_gjvakf.jpg', content_type: 'image/jpg')
 tech_interview.save!
