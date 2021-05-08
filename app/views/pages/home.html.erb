@@ -6,36 +6,42 @@
 </head>
 
 
-<body cz-shortcut-listen="true" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1518838439236-2b73ceb4638a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1267&q=80);">
+<body cz-shortcut-listen="true" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1518838439236-2b73ceb4638a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1267&q=80); background-size:cover">
 
   <!-- Banner section -->
 <div class="banner">
   <div class="container">
-    <h1>Welcome on Panoply!</h1>
-    <p>The outfit marketplace for job appointments.</p>
+  <br>
+    <h1 class="text-center">Welcome on Panoply!</h1>
+    <br>
+    <br>
+    <h3 class="text-center">The market place that allows you to rent the perfect oufit for your upcoming interview!</h32>
   </div>
 </div>
 
   <!-- "How it works" section -->
 <div class="container">
-  <%= link_to "Start now", outfits_path, class:"btn btn-primary btn-lg" %>
+  <div class="center-button">
+    <%= link_to "Start now", outfits_path, class:"btn-primary-btn-lg" %>
+  </div>
   <div class="hiw">
-    <h2 class="text-center">How it changes your life</h2>
+    <h2 class="text-center">How does it work?</h2>
+    <br>
     <div class="cards">
       <div class="card">
         <img src="images/logo.png" alt="">
-        <h4>Find</h4>
-        <p>Find the perfect outfit for your appointments.</p>
+        <h4>1) Find</h4>
+        <p class="paragraph-black">Find the perfect outfit for your appointments.</p>
       </div>
       <div class="card">
         <img src="images/logo.png" alt="">
-        <h4>Rent</h4>
-        <p>Rent the outfit for some hours.</p>
+        <h4>2) Rent</h4>
+        <p class="paragraph-black">Rent the outfit for some hours.</p>
       </div>
       <div class="card">
         <img src="images/logo.png" alt="">
-        <h4>Get a job</h4>
-        <p>Be hired for the best job ever.</p>
+        <h4>3) Get a job</h4>
+        <p class="paragraph-black">Be hired for the best job ever.</p>
       </div>
     </div>
   </div>
