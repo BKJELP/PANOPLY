@@ -4,7 +4,7 @@
   <div class="container mt-3">
     <div class="row">
         <div class="col-12">
-          <h1>All our Outfits</h1>
+          <h1>All our <%= @outfits.count %> outfits.</h1>
         </div>
     </div>
 
@@ -20,7 +20,7 @@
       </div>
       <div class="col-4">
           <div class= "btnsearch">
-            <%= submit_tag "Search", class: "btn btn-gradient" %>
+            <%= submit_tag "Search", class: "btn-search" %>
           </div>
         <% end %>
       </div>
@@ -31,7 +31,6 @@
         <% if @query %>
           <p>You searched for <strong><%= @query %></strong>. We found <%= @outfits.count %> matching outfits out of our <%= Outfit.count %> on our website.</p>
         <% else %>
-          <p>All our <%= @outfits.count %> outfits.</p>
         <% end %>
       </div>
     </div>
@@ -60,18 +59,12 @@
                 </div>
               </div>
               <div class="outfit-card-actions">
-                <%= link_to 'More info', outfit_path(outfit), class: "btn btn-flat" %>
+                <%= link_to 'More info', outfit_path(outfit), class: "btn btn-flat-index" %>
               </div>
             </div>
           </div>
         </div>
       <% end %>
     </div>
-
-    <div class="rent-bouton">
-      <% if policy(Outfit).create? %>
-        <%= link_to "Rent your outfit !", new_outfit_path, class: "btn btn-gradient" %>
-      <% end %>
-    </div>  
   </div>
 </div>

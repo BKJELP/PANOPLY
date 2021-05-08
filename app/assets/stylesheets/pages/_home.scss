@@ -17,6 +17,10 @@ h1, h2, h3, h4 {
   font-family: Poppins;
 }
 
+h3 {
+  color: white;
+}
+
 a {
   text-decoration: none;
 }
@@ -29,7 +33,7 @@ a {
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 200px 0px;
+  padding: 100px 0px;
   padding-top: 0px;
   height: 253 px;
 }
@@ -86,6 +90,7 @@ height: auto;
 box-shadow: 0 0 5px rgb(230,230,230);
 margin: 50px;
 height: 250px;
+padding: 7px
 }
 
 //Footer
@@ -109,3 +114,48 @@ height: 250px;
   color: #BF0F12;
 }
 
+
+.btn-flat-index {
+  color: white;
+    padding: 8px 24px;
+    border-radius: 4px;
+    background: #1BCB7F;
+    transition: background 0.3s ease;
+    margin: 20px auto 20px auto;
+    width: 10vw;
+    text-align: center;
+}
+
+.btn-flat-index:hover {
+  background: #0b0c0c;
+  color: white;
+}
+
+.btnsearch {
+  margin-bottom: 25px;
+}
+
+.btn-search {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+}
+
+.btn-primary-btn-lg {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #0f0f0f;
+  transition: background 0.3s ease;
+}
+
+.paragraph-black {
+  color:black !important;
+}
+
+.center-button {
+  width:12%; 
+  margin: auto; 
+}

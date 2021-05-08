@@ -115,15 +115,17 @@
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
   }
 
-  .btn-flat {
+  .btn-flat-new {
 	color: white;
 	padding: 8px 24px;
 	border-radius: 4px;
 	background: #1EDD88;
 	transition: background 0.3s ease;
+	margin: 10px auto 10px auto;
+	text-align: center;
   }
   
-  .btn-flat:hover {
+  .btn-flat-new:hover {
 	background: #1BCB7F;
 	color: white;
   }
