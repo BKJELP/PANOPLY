@@ -11,12 +11,10 @@
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    margin-bottom: 15px;
-    margin-top: 20px;
   }
 
   .container {
-    width: 30000px;
+    width: 50000px;
   }
 
   .card-product {
@@ -26,6 +24,7 @@
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     display: flex;
     align-items: center;
+    margin-bottom: 50px;
   }
   
   .card-product img {

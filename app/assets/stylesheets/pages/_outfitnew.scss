@@ -97,7 +97,7 @@
 .form-style-5 input[type="submit"]:hover,
 .form-style-5 input[type="button"]:hover
 {
-	background: #109177;
+	background: #1EDD88;
 }
 
 .card-category {
@@ -113,4 +113,17 @@
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
+
+  .btn-flat {
+	color: white;
+	padding: 8px 24px;
+	border-radius: 4px;
+	background: #1EDD88;
+	transition: background 0.3s ease;
+  }
+  
+  .btn-flat:hover {
+	background: #1BCB7F;
+	color: white;
   }

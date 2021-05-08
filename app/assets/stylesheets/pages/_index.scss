@@ -3,6 +3,10 @@
 @import "reservation";
 
 //Global
+body {
+  background: no-repeat center/300%;
+}
+
 h1 {
   color: rgb(238, 242, 245);
   font-size: 80px;
@@ -21,12 +25,12 @@ p {
   background: #1EDD88;
   transition: background 0.3s ease;
   position: center;
-  }
+}
 
 .btn-flat:hover {
   background: #1BCB7F;
   color: white;
-  }
+}
 
 .btn-gradient {
   color: white;
@@ -36,15 +40,17 @@ p {
   background: linear-gradient(#167FFB, #0F60C4);
   transition: background 0.3s ease;
   border: 1px solid #0F60C4;
-  }
+}
 
 .btn-gradient:hover {
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
-  }
+}
 
 .rent-bouton {
     margin-top: 20px ;
+    margin-bottom: 20px
+    ;
 }
 
 .form-control {
@@ -99,28 +105,28 @@ p {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 200px;
+  height: 620px;
   margin-bottom: 30px;
-  }
+}
 
 .outfit-card h4 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
-  }
+}
 
 .outfit-card-content {
   padding: 16px;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  }
+}
 
 .category {
   font-size: 15px;
   opacity: .7;
   margin-top: 5px;
-  }
+}
 
 .outfit-card-actions {
   padding: 16px;
@@ -136,37 +142,18 @@ p {
   padding: 15px;
 }
 
-.name {
-
+.img-thumbnail {
+  height: 70%;
+  img {
+    vertical-align: middle;
+    border-style: none;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    object-fit: cover;
+  }
 }
 
 .category {
 color: black;
-}
-
-.price {
-
-}
-
-//Footer
-.footer {
-  text-align: center;
-  padding: 5px;
-  background-color: rgba(255,255,255,0.5);
-  position: relative;
-  width: auto; height: 50px;
-  bottom: 0; left: 0; right: 0;
-}
-
-.footer a {
-  font-size: 30px;
-  color:  #1EDD88;
-}
-
-.footer p {
-  color: #6B6C6C;
-}
-
-.footer .fas {
-  color: #BF0F12;
 }

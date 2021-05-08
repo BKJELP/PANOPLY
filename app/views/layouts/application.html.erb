@@ -18,6 +18,10 @@
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
-    <%= yield %>
+    <%= render "shared/navbar" %>
+    <div class="full-height">
+      <%= yield %>
+    </div>
+    <%= render "shared/footer" %>
   </body>
 </html>
